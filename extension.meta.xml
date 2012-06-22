@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<extension id="multilingual_entry_url" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+
+	<name>Field: Multilingual URL</name>
+
+	<description>The multilingual version of the URL field.</description>
+
+	<repo type="github">https://github.com/vlad-ghita/multilingual_url_field</repo>
+
+	<types>
+		<type>Field Types</type>
+		<type>Multilingual</type>
+	</types>
+
+	<authors>
+		<author>
+			<name github="vlad-ghita" symphony="vladG">Vlad Ghita</name>
+			<email>vlad_micutul@yahoo.com</email>
+			<website>http://www.xanderadvertising.com</website>
+		</author>
+	</authors>
+
+	<dependencies>
+		<dependency version="1.0.1">https://github.com/vlad-ghita/url_field</dependency>
+		<dependency version="1.5">https://github.com/vlad-ghita/multilingual_entry_url</dependency>
+	</dependencies>
+
+	<releases>
+		<release version="1.0" date="2012-06-22" min="2.3.x"><![CDATA[
+			* Initial release.
+		]]></release>
+	</releases>
+
+</extension>

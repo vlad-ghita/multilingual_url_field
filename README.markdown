@@ -1,38 +1,43 @@
-Multilingual Entry URL
+Field: Multilingual URL
 ======================
 
-The multilingual version of the entry url field.
 
 
-## 1 About ##
+## 1 About
 
-When adding this field to a section, the following options are available to you:
-
-* **Anchor Label** is the text used for the hyperlink in the backend
-* **Anchor URL** is the URL of your entry view page on the frontend. An `<entry id="123">...</entry>` nodeset is provided from which you can grab field values, just as you would from a datasource. For example:
-
-		/members/profile/{entry/name/@handle}/
-
-* **For `Multilingual Text`**, you can use `$language_code` (without `{}`) as a placeholder for language codes. It will be replaced for each language on URL generation.<br />
-Let's say my `Articles` Section with a `Multilingual text` field called `Title`. Given an `Articles` Page with an URL param pointing to `Title`, an expression like this must be used:
-
-		/articles/{//title/@*[name() = concat('handle-', $language_code)]}/   --> make sure you know the XML output of Multilingual Text
-
-* **Open links in a new window** enforces the hyperlink to spawn a new tab/window
-* **Hide this field on publish page** hides the hyperlink in the entry edit form
+The multilingual version of [URL field](http://symphonyextensions.com/extensions/url_field/).
 
 
 
-### Note about compatibility ###
+## 2 Installation
 
-Currently the URL is generated this way:
+Dependencies:
 
-    /__LANGUAGE-CODE__/URL
+1. Install [URL field](http://symphonyextensions.com/extensions/url_field/) if it's not already installed.
+2. Install [Multilingual Entry URL](http://symphonyextensions.com/extensions/frontend_localisationmultilingual_entry_url/) if it's not already installed.
 
+This extension:
 
-
-## 2 Installation ##
- 
-1. Upload the 'multilingual_entry_url' folder in this archive to your Symphony 'extensions' folder.
-2. Enable it by selecting the "Field: Multilingual Entry URL", choose Enable from the with-selected menu, then click Apply.
+1. Upload the `multilingual_url_field` folder in this archive to your Symphony `extensions` folder.
+2. On `Extensions` page in Admin, install it by selecting `Field: Multilingual URL`, choose `Enable/Install` from the `With Selected` menu, then click `Apply`.
 3. The field will be available in the list when creating a Section.
+
+
+
+## 3 Usage
+
+1\_ Add a `Multilingual Entry URL` field named `View on site` to `Section A` (I assume you have a `Multilingual Text box` with name = `Title`):
+
+Set a slick value for `Anchor Label`: `{entry/title/item[ @lang='$language_code' ]}`<br />
+Set a slick value for `Anchor URL`: `/entries/{entry/title/item[ @lang='$language_code' ]/@handle}`
+
+2\_ Create some entries in `Section A`.
+
+3\_ Go to `Section B` and add `Multilingual URL` field to it. In `Values` select choose `View on site` from `Section A`.
+
+4\_ Create an entry in `Section B`. You can swtich between `Internal` and `External` links. Internal select will
+be populated with all entries from `Section A` in current language of the Author.
+
+For External links, the value must be a valid URI.
+
+If you don't select any sections in field settings, the field will accept only External links.

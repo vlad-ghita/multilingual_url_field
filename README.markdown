@@ -14,7 +14,7 @@ The multilingual version of [URL field](http://symphonyextensions.com/extensions
 Dependencies:
 
 1. Install [URL field](http://symphonyextensions.com/extensions/url_field/) if it's not already installed.
-2. Install [Multilingual Entry URL](http://symphonyextensions.com/extensions/frontend_localisationmultilingual_entry_url/) if it's not already installed.
+2. Install [Multilingual Entry URL](http://symphonyextensions.com/extensions/multilingual_entry_url/) if it's not already installed.
 
 This extension:
 
